@@ -4,8 +4,10 @@ class BinarySearchTree:
     self.left = None
     self.right = None
 
+  #  pre-order fashion?
   def depth_first_for_each(self, cb):
-    pass    
+    stack = []
+    # add to stack with no node/value?
 
   def breadth_first_for_each(self, cb):
     pass
@@ -47,3 +49,5 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+cb = lambda x: print(x)  # define callback
