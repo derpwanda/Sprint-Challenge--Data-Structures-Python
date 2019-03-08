@@ -6,22 +6,29 @@ class BinarySearchTree:
 
   #  pre-order fashion?
   def depth_first_for_each(self, cb):
-    print(cb)
-    stack = []
-    
-    # add to stack with no node/value?
-    # FILO, append the stack
-    # stack.append(node)
-    while len(stack) > 0:
-      print(f"stack",stack)
-      current = stack.pop()
+    # stack = []
+    # cb(self.value)
+    # # add to stack with no node/value?
+    # # FILO, append the stack
+    # # stack.append(node)
+    # while len(stack) > 0:
+    #   print(f"stack",stack)
+    #   current = stack.pop()
 
-      if current.right:
-        cb(current.right.value)
+    #   if self.right:
+    #     cb(self.value)
 
-      if current.left:
-        cb(current.left.value)
+    #   if self.left:
+    #     cb(self.value)
     
+    # print(f"after", stack)
+    cb(self.value)
+
+    if self.left:
+      depth_first_for_each(self.left, cb)
+    
+    if self.right:
+      depth_first_for_each(self.right, cb)
           
 
   def breadth_first_for_each(self, cb):
