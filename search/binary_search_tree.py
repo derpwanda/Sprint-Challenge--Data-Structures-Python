@@ -6,8 +6,23 @@ class BinarySearchTree:
 
   #  pre-order fashion?
   def depth_first_for_each(self, cb):
+    print(cb)
     stack = []
+    
     # add to stack with no node/value?
+    # FILO, append the stack
+    # stack.append(node)
+    while len(stack) > 0:
+      print(f"stack",stack)
+      current = stack.pop()
+
+      if current.right:
+        cb(current.right.value)
+
+      if current.left:
+        cb(current.left.value)
+    
+          
 
   def breadth_first_for_each(self, cb):
     pass
@@ -50,4 +65,4 @@ class BinarySearchTree:
       current = current.right
     return max_value
 
-cb = lambda x: print(x)  # define callback
+# i dont think I need to provide the cb
