@@ -8,7 +8,7 @@ class BinarySearchTree:
   def depth_first_for_each(self, cb):
     stack = []
     stack.append(self)
-    cb(self.value)
+    # cb(self.value)
     
     while stack:
       current = stack.pop()
@@ -20,17 +20,16 @@ class BinarySearchTree:
       # print(f"print stack", print_stack)
       # if current:
       #   return
+      if current.right:
+        stack.append(current.right)
+        # cb(current.right.value)
 
       if current.left:
         stack.append(current.left)
-        cb(current.left.value)
+        # cb(current.left.value)
 
-      elif current.right:
-        stack.append(current.right)
-        cb(current.right.value)
-
-
-
+      cb(current.value)
+      print(current.value)
 
     # cb(self.value)
     # if self is None:
