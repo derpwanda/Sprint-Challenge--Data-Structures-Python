@@ -13,12 +13,14 @@ Add your answers to the questions below.
 
 
 5. What is the runtime complexity of the provided code in `names.py`? 
-    The runtime is O(log n) due to the two for loops. The final comparison doesn't add to the runtime.
+    The runtime is O(n**2) due to the two for loops. The final comparison doesn't add to the runtime.
 
 6. What is the space complexity of the provided code in `names.py`?
-    The spacetime is O(n) because we are creating/adding to a new list, duplicates.
+    The spacetime is O(n).
 
 7. What is the runtime complexity of your optimized code in `names.py`?
+    The runtime complexity is O(n)
 
 
 8. What is the space complexity of your optimized code in `names.py`?
+    The spacetime is O(c).
