@@ -1,8 +1,11 @@
 Add your answers to the questions below.
 
 1. What is the runtime complexity of your `depth_first_for_each` method?
+    O(n)
 
 2. What is the space complexity of your `depth_first_for_each` function?
+    O(n)
+
 
 3. What is the runtime complexity of your `breadth_first_for_each` method?
 
@@ -16,5 +19,6 @@ Add your answers to the questions below.
     The spacetime is O(n) because we are creating/adding to a new list, duplicates.
 
 7. What is the runtime complexity of your optimized code in `names.py`?
+
 
 8. What is the space complexity of your optimized code in `names.py`?
