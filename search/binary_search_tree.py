@@ -44,15 +44,15 @@ class BinarySearchTree:
     pass
 
   def insert(self, value):
-    new_tree = BinarySearchTree(value)
+    new_node = BinarySearchTree(value)
     if (value < self.value):
       if not self.left:
-        self.left = new_tree
+        self.left = new_node
       else:
         self.left.insert(value)
     elif value >= self.value:
       if not self.right:
-        self.right = new_tree
+        self.right = new_node
       else:
         self.right.insert(value)
 
@@ -83,6 +83,6 @@ class BinarySearchTree:
 
 # i dont think I need to provide the cb
 
-      # print(f"current",current.value)
-      # print(f"currentleft",current.left.value)
-      # print(f"currentright",current.right.value)
+    print(f"current",current.value)
+    print(f"currentleft",current.left.value)
+    print(f"currentright",current.right.value)
