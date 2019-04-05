@@ -5,10 +5,13 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
+    # current = current % capcity
+    # if i is None, pop(current), insert(current,item), current =+ 1.
     pass
 
   def get(self):
-    pass
+    # remove Nones from list, then return
+    return self.storage
 
 """ What is a Ring Buffer?
 A ring buffer is also known as a circular buffer. 
@@ -23,11 +26,13 @@ If our buffer is filled, we want the newest element to OVERWRITE the oldest elem
   1. [a, b, c, d], add element(e), now array is [e, b, c, d]
   2. [e, b, c, d], add elemtent(f), now array is [e, f, c, d]
 
-So if an element array is None pop/append like a normal queue. 
-If it is full SWAP with the oldest item in the queue.
+So if an element array is None pop/append like a normal queue.
+Add to the list front to back by pop(current)/insert(current, item).
+  I'll need to utilized modulo (%)
+If it is full SWAP with the oldest item in the queue. (%)
 
 GET
-return the array
+return the array without the Nones.
  """
 
 """ What I know:
