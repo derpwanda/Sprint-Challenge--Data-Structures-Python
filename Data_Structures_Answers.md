@@ -31,4 +31,4 @@ RING BUFFER ^^^^^
     The runtime complexity is O(n)
 
 8. What is the space complexity of your optimized code in `names.py`?
-    The spacetime is O(c).
+    The spacetime is O(n).
