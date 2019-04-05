@@ -10,7 +10,6 @@ class RingBuffer:
     index_tracker = self.current % self.capacity
     storage = self.storage
   
-    print(index_tracker)
 
     storage.pop(index_tracker)
     storage.insert(index_tracker, item)
@@ -19,10 +18,13 @@ class RingBuffer:
 
   def get(self):
     # remove Nones from list, then return
-    # for i in self.storage:
-    #   if self.storage[i] == None:
-    #     self.storage.pop(i)
-    return print(self.storage)
+    # list comprehension style
+      # for i in self.storage, if i has a value, add i to list
+    new_list = [i for i in self.storage if i]
+
+    # using filter
+    # new_list = list(filter(None, self.storage))
+    return new_list
 
 """ What is a Ring Buffer?
 A ring buffer is also known as a circular buffer. 
@@ -50,23 +52,23 @@ return the array without the Nones.
 The empty array we start with has a size/length. The Nones are counted.
  """
 
-buffer = RingBuffer(3)
+# buffer = RingBuffer(3)
 
-buffer.append('a')
-buffer.append('b')
-buffer.append('c')
+# buffer.append('a')
+# buffer.append('b')
+# buffer.append('c')
 
-buffer.get()        # should return ['a', 'b', 'c']
+# buffer.get()        # should return ['a', 'b', 'c']
 
-buffer.append('d')  # directly replaces 'a' 
+# buffer.append('d')  # directly replaces 'a' 
 
-buffer.get()        # should return ['d', 'b', 'c']
+# buffer.get()        # should return ['d', 'b', 'c']
 
-buffer.append('e')  # directly replaces 'b'
-buffer.append('f')  # directly replaces 'c'
+# buffer.append('e')  # directly replaces 'b'
+# buffer.append('f')  # directly replaces 'c'
 
-buffer.get()        # should return ['d', 'e', 'f']
+# buffer.get()        # should return ['d', 'e', 'f']
 
-buffer.append('g')
+# buffer.append('g')
 
-buffer.get()
+# buffer.get()
