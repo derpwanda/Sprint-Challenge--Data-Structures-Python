@@ -7,11 +7,22 @@ class RingBuffer:
   def append(self, item):
     # current = current % capcity
     # if i is None, pop(current), insert(current,item), current =+ 1.
-    pass
+    index_tracker = self.current % self.capacity
+    storage = self.storage
+  
+    print(index_tracker)
+
+    storage.pop(index_tracker)
+    storage.insert(index_tracker, item)
+    self.current += 1
+
 
   def get(self):
     # remove Nones from list, then return
-    return self.storage
+    # for i in self.storage:
+    #   if self.storage[i] == None:
+    #     self.storage.pop(i)
+    return print(self.storage)
 
 """ What is a Ring Buffer?
 A ring buffer is also known as a circular buffer. 
@@ -38,3 +49,24 @@ return the array without the Nones.
 """ What I know:
 The empty array we start with has a size/length. The Nones are counted.
  """
+
+buffer = RingBuffer(3)
+
+buffer.append('a')
+buffer.append('b')
+buffer.append('c')
+
+buffer.get()        # should return ['a', 'b', 'c']
+
+buffer.append('d')  # directly replaces 'a' 
+
+buffer.get()        # should return ['d', 'b', 'c']
+
+buffer.append('e')  # directly replaces 'b'
+buffer.append('f')  # directly replaces 'c'
+
+buffer.get()        # should return ['d', 'e', 'f']
+
+buffer.append('g')
+
+buffer.get()
